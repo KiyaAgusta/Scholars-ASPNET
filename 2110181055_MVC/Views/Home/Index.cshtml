@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    if (Session["university_id"] == null)
+    {
+        Response.Redirect("~/Home/Login");
+    }
+}
+
+<div class="main-card mb-3 card">
+    <div class="card-body">
+        <h5 class="card-title">Dashboard</h5>
+        <div class="mb-3 text-center">
+            <div role="group" class="btn-group-sm nav btn-group">
+                <a data-toggle="tab" href="#tab-eg15-0" class="btn-shadow active btn btn-primary">App Description</a>
+                <a data-toggle="tab" href="#tab-eg15-1" class="btn-shadow  btn btn-primary">Contact</a>
+            </div>
+        </div>
+        <div class="tab-content">
+            <div class="tab-pane active" id="tab-eg15-0" role="tabpanel">
+                <p>
+                    Scholars App provides information about lecturers and faculties throughout universities. This app consists of CRUD operations for lecturers and faculties in each university.
+                </p>
+            </div>
+            <div class="tab-pane" id="tab-eg15-1" role="tabpanel">
+                <p>
+                    I Made Akira Ivandio Agusta - 2110181055 - akiraivandio@it.student.pens.ac.id
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+﻿@model _2110181055_MVC.Models.faculty
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    if (Session["university_id"] == null)
+    {
+        Response.Redirect("~/Home/Login");
+    }
+}
+
+<div class="main-card mb-3 card">
+    <div class="card-body">
+        <h5 class="card-title">Lecturer Details</h5>
+        <table class="mb-0 table table-bordered">
+            <tbody>
+                <tr>
+                    <th scope="row"><b>Faculty Name</b></th>
+                    <td>@Html.DisplayFor(model => model.faculty_name)</td>
+                </tr>
+                <tr>
+                    <th scope="row"><b>Accreditation</b></th>
+                    <td>@Html.DisplayFor(model => model.accreditation)</td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="mt-3 btn-transition btn btn-outline-info">@Html.ActionLink("Edit", "Edit", new { id = Model.faculty_id })</button>
+        <button class="mt-3 btn btn-light">@Html.ActionLink("Back to List", "Index")</button>
+    </div>
+</div>

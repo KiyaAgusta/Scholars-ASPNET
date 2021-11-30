@@ -1,0 +1,37 @@
+﻿@model _2110181055_MVC.Models.university
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    if (Session["university_id"] == null)
+    {
+        Response.Redirect("~/Home/Login");
+    }
+}
+
+<div class="main-card mb-3 card">
+    <div class="card-body">
+        <h5 class="card-title">University Profile</h5>
+        <table class="mb-0 table table-bordered">
+            <tbody>
+                <tr>
+                    <th scope="row"><b>University Name</b></th>
+                    <td>@Html.DisplayFor(model => model.university_name)</td>
+                </tr>
+                <tr>
+                    <th scope="row"><b>Email</b></th>
+                    <td>@Html.DisplayFor(model => model.email)</td>
+                </tr>
+                <tr>
+                    <th scope="row"><b>Password</b></th>
+                    <td>@Html.DisplayFor(model => model.password)</td>
+                </tr>
+                <tr>
+                    <th scope="row"><b>Location</b></th>
+                    <td>@Html.DisplayFor(model => model.location)</td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="mt-3 btn-transition btn btn-outline-info">@Html.ActionLink("Edit", "Edit", new { id = Model.university_id })</button>
+    </div>
+</div>
